@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let numbPositive = 0;
+        let numbNegative = 0;
+        let numbZero = 0;
+        let numbEven = 0;
+        let numbOdd = 0;
+
+        for (let i = 0; i < 10; i++) {
+            let number = prompt('Please enter 10 numbers');
+            if (number > 0) {
+                numbPositive++;
+            } else if (number < 0) {
+                numbNegative++;
+            } else {
+                numbZero++;
+            } 
+            if (number % 2 == 0) {
+                numbEven++;
+            } else {
+                numbOdd++;
+            }
+
+        }
+        document.write(`You have entered: ${numbPositive} positive numbers; ${numbNegative} negative numberss; ${numbZero} zeros; ${numbEven} even numbs; ${numbOdd} odd numbs`);
+    </script>
+</body>
+</html>
