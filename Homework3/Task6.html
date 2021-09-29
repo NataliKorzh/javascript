@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let minNumber = prompt("Please, enter the first number of the range");
+        let maxNumber = prompt("Please, enter the second number of the range");
+
+        function allPerfectNumbers(x, y) {
+            for (let i = x; i <= y; i++) {
+                 let sum = 0;
+                     for (let k = x; k < i; k++) {
+                         if (i % k == 0) {
+                            sum += k;
+                    }
+                    }
+                } if (sum == i) {
+                    document.write(); //я не знаю, как вывести все числа диапазона. 
+                }
+            }
+
+        allPerfectNumbers(minNumber, maxNumber);
+
+    </script>
+</body>
+</html>

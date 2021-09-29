@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let seconds = prompt('Please, enter the number of seconds you want to transform');
+        function secondsToTime (time) {
+            
+            let hours = Math.floor(time / 3600);
+            let minutes = Math.floor((time - (hours * 3600)) / 60);
+            let seconds = time % 60;
+            
+            alert(hours + ':' + minutes + ':' + seconds);
+        }
+
+        secondsToTime (seconds);
+
+        
+
+    </script>
+</body>
+</html>
