@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const firstNumber = {
+        numerator: '',
+        denominator: '',
+    };
+        const secondNumber = {
+        numerator: '',
+        denominator: '',
+    };
+  
+        const gcd = function (n, m) {
+        let r = 0;
+        while (n !== 0) {
+        r = m % n;
+        m = n;
+        n = r;
+        }
+        return m;
+        };
+
+    firstNumber.numerator = +prompt('Please, enter the first fraction numerator');
+    firstNumber.denominator = +prompt('Please, enter the first fraction denominator');
+    secondNumber.numerator = +prompt('Please, enter the second fraction numerator');
+    secondNumber.denominator = +prompt('Please, enter the second fraction denominator');
+
+
+    function addFractions(obj1, obj2) {
+            let n = obj1.numerator * obj2.denominator;
+            let w = obj2.numerator * obj1.denominator;
+            let generalNumerator = n + w;
+            let generalDenominator = (obj1.denominator * obj2.denominator);          
+            let gcdGeneral = gcd(generalNumerator, generalDenominator);
+            let gNumerator = generalNumerator / gcdGeneral;
+            let gDenominator = generalDenominator / gcdGeneral;
+            
+            document.write(`The result of addition = ${gNumerator}/${gDenominator}`);
+      };
+    
+    function subtractionFractions(obj1, obj2) {
+        let k = obj1.numerator * obj2.denominator;
+        let l = obj2.numerator * obj1.denominator;
+        let generalNumerator = k - l;
+        let generalDenominator = (obj1.denominator * obj2.denominator);          
+        let gcdGeneral = gcd(generalNumerator, generalDenominator);
+        let gNumerator = generalNumerator / gcdGeneral;
+        let gDenominator = generalDenominator / gcdGeneral;
+        
+        document.write(`The result of subtraction = ${gNumerator}/${gDenominator}`);
+
+    };
+
+    function multiplicationFractions(obj1, obj2) {
+        let generalNumerator = obj1.numerator * obj2.numerator;
+        let generalDenominator = obj1.denominator * obj2.denominator;
+        let gcdGeneral = gcd(generalNumerator, generalDenominator);
+        let gNumerator = generalNumerator / gcdGeneral;
+        let gDenominator = generalDenominator / gcdGeneral;
+
+        document.write(`The result of multiplication = ${gNumerator}/${gDenominator}`);
+
+    };
+
+    function divisionFraction (obj1, obj2) {
+        let generalNumerator = obj1.numerator * obj2.denominator;
+        let generalDenominator = obj1.denominator * obj2.numerator;
+        let gcdGeneral = gcd(generalNumerator, generalDenominator);
+        let gNumerator = generalNumerator / gcdGeneral;
+        let gDenominator = generalDenominator / gcdGeneral;
+
+        document.write(`The result of division = ${gNumerator}/${gDenominator}`);
+
+    };
+
+    function reduceFraction (obj1, obj2) {
+        let gcdGeneral = gcd(generalNumerator, generalDenominator);
+        let gNumerator = generalNumerator / gcdGeneral;
+        let gDenominator = generalDenominator / gcdGeneral;
+    };
+
+    addFractions(firstNumber, secondNumber);
+    subtractionFractions(firstNumber, secondNumber);
+    multiplicationFractions(firstNumber, secondNumber);
+    divisionFraction(firstNumber, secondNumber);
+
+    </script>
+</body>
+</html>

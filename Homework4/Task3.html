@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const time = {
+        hours: '',
+        minutes: '',
+        seconds: '',
+  };
+
+      function snowTime() {
+      time.hours = new Date().getHours();
+      time.minutes = new Date().getMinutes();
+      time.seconds = new Date().getSeconds();
+
+      let h = time.hours;
+      let m = time.minutes;
+      let s = time.seconds;
+  
+      alert(`It is ${h}:${m}:${s} now`);
+  
+  };
+
+  function shiftByHours() {
+    const shiftHours = +prompt('Enter a number of hours you want to shift time');
+
+    let h = time.hours;
+    let m = time.minutes;
+    let s = time.seconds;
+
+    const timeResult = h + shiftHours;
+    if (timeResult >= 24) {
+      h = time.hours + (Math.floor(timeResult / 24) % 24);
+      
+    } else {h = h + shiftHours};
+    
+    alert(`It will be ${h}:${m}:${s}`);
+  };
+
+   function shiftBySeconds() {
+    const shift = +prompt('Enter a number of seconds you want to shift time');
+    let h = time.hours * 3600;
+    let m = time.minutes * 60;
+    let s = time.seconds;
+    const timeResult = (h + m + s) + shift;
+    h = Math.floor(timeResult / 3600);
+    m = Math.floor(timeResult / 60) % 60;
+    s = Math.ceil(timeResult - m * 60) % 60;
+    
+    alert(`It will be ${h}:${m}:${s}`);
+  };
+
+  function shiftByMinutes () {
+    const shiftMinutes = +prompt('Enter a number of minutes you want to shift time');
+
+    let h = time.hours * 60;
+    let m = time.minutes;
+    let s = time.seconds / 60;
+    const timeResult = (h + m + s) + shiftMinutes;
+
+    h = Math.floor(timeResult / 60);
+    m = Math.floor(timeResult % 60);
+    s = Math.ceil(timeResult * 60) % 60;
+  
+
+  alert(`It will be ${h}:${m}:${s}`);
+};
+
+ 
+  snowTime();
+  shiftBySeconds();
+  shiftByMinutes ();
+  shiftByHours();
+
+ 
+    </script>
+</body>
+</html>
