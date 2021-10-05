@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const auditories = [
+        {
+          name: 'Paradontology',
+          seats: 20,
+          faculty: 'Stomatology',
+        },
+        {
+          name: 'Surgical',
+          seats: 10,
+          faculty: 'Surgery',
+        },
+        {
+          name: 'Reception',
+          seats: 40,
+          faculty: 'Therapist',
+        },
+        {
+          name: 'Lecture hall',
+          seats: 11,
+          faculty: 'Neonatology',
+        },
+        ];
+
+
+        showByGroup();
+//1
+        function allAuditories() {
+        auditories.forEach(element => {
+        document.write(`Auditory name: ${element.name} </br> Number of seats: ${element.seats} </br> Faculty: ${element.faculty} </br>`,);
+    });
+   };
+//2
+      function showNamedAuditory() {
+        let classroom = prompt('Please, choose the faculty you want to see the auditory properties. Enter "1" for Stomatology, "2" for Surgery, "3" for Therapist, "4" for Neonatology');
+        switch (classroom) {
+      case '1':
+        classroom = 'Stomatology';
+        break;
+      case '2':
+        classroom = 'Surgery';
+        break;
+      case '3':
+        classroom = 'Therapist';
+        break;
+      case '4':
+        classroom = 'Neonatology';
+        break;
+    }
+
+      let filteredRooms = auditories.filter(
+      room => room.faculty == classroom,
+    );
+
+    alert(`Classroom chosen for ${classroom} department:`);
+    filteredRooms.forEach(element => {
+      alert(`${element.name} with max seat ${element.seats}`);
+    });
+
+  };
+//3
+
+function showByGroup () {
+  const newGroup = {};
+  newGroup.name = prompt('Please, choose the name of auditory. Enter "1" for Paradontology, "2" for Surgical, "3" for Reception, "4" for Lecture hall');
+  newGroup.students = +prompt('Please, write the number of Students (not more then 40');
+  newGroup.faculty = prompt('Please, choose the faculty you want to see the auditory properties. Enter "1" for Stomatology, "2" for Surgery, "3" for Therapist, "4" for Neonatology');
+
+  
+  switch (newGroup.name) {
+      case '1':
+      newGroup.name = 'Paradontology';
+        break;
+      case '2':
+      newGroup.name = 'Surgical';
+        break;
+      case '3':
+      newGroup.name = 'Reception';
+        break;
+      case '4':
+      newGroup.name = 'Lecture hall';
+        break;
+    }
+switch (newGroup.faculty) {
+      case '1':
+      newGroup.faculty = 'Stomatology';
+        break;
+      case '2':
+      newGroup.faculty = 'Surgery';
+        break;
+      case '3':
+      newGroup.faculty = 'Therapist';
+        break;
+      case '4':
+      newGroup.faculty = 'Neonatology';
+        break;
+    }
+
+    auditories.forEach(element => {
+      if (element.seats >= newGroup.students && element.faculty == newGroup.faculty) {
+        console.log(`${element.name} classroom for ${element.faculty} faculty (max ${element.seats} seats)`);
+      }
+    });
+}
+
+
+//4
+  function sortBySeats(a, b) {
+        if (a.seats < b.seats) {
+          return -1;
+        } else if (a.seats > b.seats) {
+          return 1;
+        }
+      };
+    
+  let sortBySeatsResult = auditories.sort(sortBySeats);
+  console.log('Sort by seats', sortBySeatsResult);
+
+
+//5
+    auditories.sort(function(a, b) {
+    let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase()
+    if (nameA < nameB) 
+        return -1
+    if (nameA > nameB)
+        return 1
+    return 0 
+});  
+console.log(auditories);
+  
+  
+      
+    
+    </script>
+</body>
+</html>

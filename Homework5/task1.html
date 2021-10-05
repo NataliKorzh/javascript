@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const shopping = [
+        { name: 'Pen', quantity: 4, bought: true },
+        { name: 'Notebook', quantity: 2, bought: false },
+        { name: 'Pencil', quantity: 1, bought: false },
+        { name: 'Book', quantity: 2, bought: true },
+    ];
+//1
+    function showBoughtAndNot() {
+        let notBought = shopping.filter((item) => item.bought == false);
+        let alreadyBought = shopping.filter((item) => item.bought == true);
+        console.log("Not bought:");
+        console.log(notBought);
+        console.log("Bought:");
+        console.log(alreadyBought);
+    };
+
+    showBoughtAndNot();
+
+
+//2
+    function addInShoppingList (item) {
+        const existingItem = shopping.find(element => element.name === item.name);
+        if (existingItem !== undefined) {
+            existingItem.quantity += item.quantity;
+        } else {
+        shopping.push(item);
+        };
+
+        item.name = prompt('Enter an item you want to add to the shopping list');
+        item.quantity = +prompt('Enter quantity');
+        item.bought = prompt('Is it bought already? (write true/false)');
+              
+        console.log('Add item', shopping.sort(showBoughtAndNot));
+  };
+    
+  addInShoppingList(shopping);
+
+  //3
+  function markItemAsBought(itemName) {
+        shopping.forEach((item) => markItem(item, itemName));
+    };
+
+    function markItem(item, itemName) {
+            if (item.name == itemName) {
+                item.bought == true;
+                console.log("This item marked as bought: " + item.name);
+         
+    }
+};
+markItemAsBought('Notebook');
+     
+
+    </script>
+</body>
+</html>

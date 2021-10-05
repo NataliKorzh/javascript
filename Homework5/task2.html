@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const shoppingList = [
+  {
+    name: 'wine',
+    price: 200,
+  },
+  {
+    name: 'cheese',
+    price: 150,
+  },
+  {
+    name: 'water',
+    price: 50,
+  },
+  {
+    name: 'olives',
+    price: 100,
+  },
+  {
+    name: 'grape',
+    price: 150
+  }
+];
+
+let sum = 0;
+let theMostExpensiveCost = 0;
+let theMostExpensiveName = '';
+
+shoppingList.forEach(function (element) {
+  sum += element.price;
+  if (element.price > theMostExpensiveCost) {
+    theMostExpensiveName = element.name;
+  }
+});
+
+function findAveragePrice() {
+    let sum = 0;
+    let itemsNumber = 0;
+    let averagePrice = 0;
+    shoppingList.forEach(element => {
+      sum += element.price;
+    });
+    itemsNumber = shoppingList.length;
+    averagePrice = sum / itemsNumber;
+
+    console.log('Average cost of an item = ' + averagePrice);
+  };
+
+
+shoppingList.forEach((goods) => {
+        document.write(`${goods.name}:  ${goods.price} $<br>`);
+        });
+console.log(`Sum = ${sum}`);
+console.log(`The most expensive product is ${theMostExpensiveName}`);
+findAveragePrice(shoppingList);
+
+    </script>
+</body>
+</html>
