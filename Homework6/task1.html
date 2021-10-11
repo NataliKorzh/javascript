@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div></div>
+    <script>
+    let playList = [
+    {
+        author: "LED ZEPPELIN",
+        song: "STAIRWAY TO HEAVEN"
+    },
+    {
+        author: "QUEEN",
+        song: "BOHEMIAN RHAPSODY"
+    },
+    {
+        author: "LYNYRD SKYNYRD",
+        song: "FREE BIRD"
+    },
+    {
+        author: "DEEP PURPLE",
+        song: "SMOKE ON THE WATER"
+    },
+    {
+        author: "JIMI HENDRIX",
+        song: "ALL ALONG THE WATCHTOWER"
+    },
+    
+    {
+        author: "AC/DC",
+        song: "BACK IN BLACK"
+    },
+    
+    {
+        author: "QUEEN",
+        song: "WE WILL ROCK YOU"
+    },
+    {
+        author: "METALLICA",
+        song: "ENTER SANDMAN"
+    }    
+];
+      const div = document.querySelector('div');
+      const ul = document.createElement('ul');
+      
+      div.append(ul);
+      for (let i in playList) {
+      const li = document.createElement('li');
+      li.append(playList[i].author);
+      li.append(' - ');
+      li.append(playList[i].song);
+      ul.append(li);
+      };
+   </script>
+</body>
+</html>
