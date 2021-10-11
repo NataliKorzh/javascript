@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compareDates () {
+            const hours1 = +prompt('Enter hours');
+            const minutes1 = +prompt('Enter minutes');
+            const seconds1 = +prompt('Enter seconds');
+            const hours2 = +prompt('Enter hours');
+            const minutes2 = +prompt('Enter minutes');
+            const seconds2 = +prompt('Enter seconds');
+
+        function transformToSeconds() {
+            h = hours1 * 3600;
+            m = minutes1 * 60;
+            let timeFirst = h + m + seconds1;
+            h2 = hours2 * 3600;
+            m2 = minutes2 * 60;
+            let timeSecond = h2 + m2 + seconds2;
+            let timeDifference = timeSecond - timeFirst;
+
+            let hours = Math.floor(timeDifference / 3600);
+            let minutes = Math.floor((timeDifference - (hours * 3600)) / 60);
+            let seconds = timeDifference % 60;
+            alert(hours + ':' + minutes + ':' + seconds);
+        }
+        transformToSeconds();
+        }
+        compareDates ();
+        
+    </script>
+</body>
+</html>
