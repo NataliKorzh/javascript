@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            width: 200px;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            color: black;
+            background-color: burlywood;
+
+        }
+
+
+    </style>
+    <div class="container">
+        <p>
+          Press [Ctrl + E] to edit, press [Ctrl +] to finish editing.
+        </p>
+        <div class="box">
+          <textarea class="editor hide"></textarea>
+          <div class="result"> 
+            This bitter earth
+            Well, what a fruit it bears
+            What good is love
+            Mm, mm, that no one shares?
+            And if my life is like the dust
+            Ooh, that hides the glow of a rose
+            What good am I?
+            Heaven only knows
+            Lord, this bitter earth
+            Yes, can be so cold
+            Today, you're young
+            Too soon, you're old 
+            But while a voice within me cries
+            I'm sure someone may answer my call
+            And this bitter earth
+            Ooh, may not, oh, be so bitter after all
+          </div>
+        </div>
+    </div>
+    <script>
+        const textResult = document.querySelector('.result');
+        const editedText = document.querySelector('.editor');
+
+        window.addEventListener('keydown', event => {
+        if (event.code == 'KeyE' && event.ctrlKey) {
+        event.preventDefault();
+        editedText.classList.remove('hide');
+        textResult.classList.add('hide');
+        editedText.innerText = textResult.innerText;
+    }
+
+        if (event.code == 'NumpadAdd' && event.ctrlKey) {
+        event.preventDefault();
+        editedText.classList.add('hide');
+        resultText.classList.remove('hide');
+        resultText.innerText = editedText.value;
+    }
+});
+    </script>
+</body>
+</html>
