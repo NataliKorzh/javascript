@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Movies finder</title>
+</head>
+<body>
+  <div class="main">
+    <div class="search">
+        <h1>Search movie</h1>
+        <button onclick="watchFavorite('favorite', 'search')">Your favorite movies are here</button>
+        <form class="search-form">
+            <input type="text" id="filmTitle" placeholder="Enter film's title" required>
+            <select id="typeMovie">
+                <option value="" disabled selected>Choose movie type</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+            </select>
+            <button type="submit" id="subm">Search</button>
+        </form>
+        <div id="results" class="results"></div>
+        <div id="details"></div>
+    </div>
+    <div class="favorite hidden">
+        <h2>Your favorite movies</h2>
+        <button onclick="watchFavorite('search', 'favorite')">Back to search</button>
+        <div id="favorList" class="results"></div>
+        <div id="detailsF"></div>
+    </div>
+</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
