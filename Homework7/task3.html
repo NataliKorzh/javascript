@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        
+        .textarea {
+            display: block;
+            position: relative;
+            width: 500px;
+            margin: auto;
+            text-align: justify;
+            padding: 5px;
+            border: 2px solid rgb(1, 87, 20);
+            margin-bottom: 10px;
+        }
+
+        .resizer {
+            display: block;
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            z-index: 1;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: rgb(122, 20, 20);
+            border: 2px solid rgb(137, 160, 9);
+            cursor: pointer;
+}
+    </style>
+    <div class="container" id="content">
+        <div class="textarea" id="content__textarea">
+            This bitter earth
+            Well, what a fruit it bears
+            What good is love
+            Mm, mm, that no one shares?
+            And if my life is like the dust
+            Ooh, that hides the glow of a rose
+            What good am I?
+            Heaven only knows
+            Lord, this bitter earth
+            Yes, can be so cold
+            Today, you're young
+            Too soon, you're old 
+            But while a voice within me cries
+            I'm sure someone may answer my call
+            And this bitter earth
+            Ooh, may not, oh, be so bitter after all
+        <div class="resizer"></div>
+        </div>
+    </div>
+    <script>
+        //тут что-то пошло не так. Я не нала что, вроде все прописано правильно
+        //а окно все равно не теянется никуда( я уже пробовал и так и этак, меняла селекторы, идентификаторы и классы. 
+        //не понимаю почему
+        const resizeDiv = document.getElementsById("content__textarea");
+        const resizer = document.querySelector("div.resizer");
+
+        const initResize = (e) => {
+        e.preventDefault;
+        window.addEventListener("mousemove", startResize);
+        window.addEventListener("mouseup", stopResize);
+};
+
+        const startResize = (e) => {
+        resizeDiv.style.width = e.clientX - resizeDiv.offsetLeft + "px";
+        resizeDiv.style.height = e.clientY - resizeDiv.offsetTop + 'px';
+
+};
+        const stopResize = (e) => {
+        window.removeEventListener("mousemove", startResize);
+        window.removeEventListener("mouseup", stopResize);
+};
+
+        resizer.addEventListener("mousedown", initResize);
+    </script>
+</body>
+</html>
